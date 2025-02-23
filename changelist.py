@@ -1,0 +1,37 @@
+class ChangeList:
+    def __init__(self):
+        self.dada = [] 
+        self.adderi = 0
+
+    def append(self, number):
+        # TODO
+        self.dada.append(number - self.adderi)
+
+    def get(self, index):
+        return self.dada[index] + self.adderi
+
+    def change_all(self, amount):
+        self.adderi += amount
+
+if __name__ == "__main__":
+    numbers = ChangeList()
+
+    numbers.append(1)
+    numbers.append(2)
+    numbers.append(3)
+
+    print(numbers.get(0)) # 1
+    print(numbers.get(1)) # 2
+    print(numbers.get(2)) # 3
+
+    numbers.change_all(2)
+    print(numbers.get(0)) # 3
+    print(numbers.get(1)) # 4
+    print(numbers.get(2)) # 5
+
+    numbers.append(8)
+    numbers.change_all(-1)
+    print(numbers.get(0)) # 2
+    print(numbers.get(1)) # 3
+    print(numbers.get(2)) # 4
+    print(numbers.get(3)) # 7
